@@ -8,21 +8,21 @@
         Height="600" Width="600">
 
     <UserControl.Resources>
-        <Style x:Key="textBlockStyle" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="Black" />
+        <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
             <Setter Property="FontFamily" Value="Arial" />
             <Setter Property="FontSize" Value="20" />
             <Setter Property="Padding" Value="5" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Background" Value="Red"/>
+            <Setter Property="Margin" Value="10"/>
         </Style> 
     </UserControl.Resources>
     
     <StackPanel HorizontalAlignment="Center">
-        <Image Source="Resources/picross.png" Margin="10,0,0.4,0" Height="49" >
+        <Image Source="Resources/picross.png" Margin="10,0,0.4,0" Height="100" >
         </Image>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -31,19 +31,15 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Start puzzle" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Command="{Binding Start}" Style="{StaticResource textBlockStyle}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,10,0,0">
-                Start
+            <Button Command="{Binding Start}" Style="{StaticResource buttonStyle}" Grid.Row="0" Grid.Column="0" >
+                Start Puzzle
             </Button>
-            <TextBlock Text="Select puzzle" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Command="{Binding SelectPuzzle}" Style="{StaticResource textBlockStyle}" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Margin="10,10,0,0" >
-                Select puzzle
+            <Button Command="{Binding SelectPuzzle}" Style="{StaticResource buttonStyle}"  Grid.Row="0" Grid.Column="2" >
+                Select Puzzle
             </Button>
 
-            <Button Command="{Binding Quit}" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,10,0,0" FontFamily="Arial">
+            <Button Command="{Binding Quit}" Style="{StaticResource buttonStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" >
                 Quit
             </Button>
         </Grid>

@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         d:DesignHeight="600" d:DesignWidth="600"
         Title="MainWindow">
-    <Grid Width="auto" Height="auto" Background="LightBlue">
+    <Grid Width="auto" Height="auto" Background="Gray">
         <ContentControl Content="{Binding ActiveScreen}"/>
     </Grid>
 

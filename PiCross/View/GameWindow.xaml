@@ -7,6 +7,18 @@
         xmlns:local="clr-namespace:View.Converters"
         mc:Ignorable="d"
         d:DesignHeight="600" d:DesignWidth="600">
+
+    <UserControl.Resources>
+        <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Background" Value="Red"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </UserControl.Resources>
+
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
         <Image Source="Resources/picross.png" Margin="10,0,0,0" Height="49" >
         </Image>
@@ -91,7 +103,7 @@
 
             <Border HorizontalAlignment="Stretch" VerticalAlignment="Center" Padding="20">
                 <Border.Background>
-                    <SolidColorBrush Color="#23395D" Opacity=".5" />
+                    <SolidColorBrush Color="Green" Opacity=".5" />
                 </Border.Background>
                 <Border.Visibility>
                     <Binding Path="PlayablePuzzle.IsSolved.Value">
@@ -101,17 +113,17 @@
                     </Binding>
                 </Border.Visibility>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Text="Solved" Foreground="White" FontWeight="Bold" FontFamily="Arial" />
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Text="You solved it!" Foreground="Black" FontWeight="Bold" FontFamily="Arial" />
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button Margin="10" FontSize="32" Command="{Binding Back}" FontFamily="Arial">Back</Button>
-                        <Button Margin="10" FontSize="32" Command="{Binding Quit}" FontFamily="Arial">Quit</Button>
+                        <Button Command="{Binding Back}" Style="{StaticResource buttonStyle}" >Back</Button>
+                        <Button Command="{Binding Quit}" Style="{StaticResource buttonStyle}">Quit</Button>
                     </StackPanel>
                 </StackPanel>
             </Border>
 
         </Grid>
 
-        <Button FontSize="18" Command="{Binding Back}" Margin="10" Width="50">Back</Button>
+        <Button Command="{Binding Back}" Style="{StaticResource buttonStyle}">Back</Button>
 
     </StackPanel>
 

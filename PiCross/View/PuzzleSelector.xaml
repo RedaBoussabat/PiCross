@@ -8,6 +8,18 @@
         xmlns:converters="clr-namespace:View.Converters"
         mc:Ignorable="d"
         d:DesignHeight="600" d:DesignWidth="600">
+
+    <UserControl.Resources>
+        <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Background" Value="Red"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </UserControl.Resources>
+    
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
         <Image Source="Resources/picross.png" Margin="10,0,0,0" Height="49" >
         </Image>
@@ -25,6 +37,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
             <TextBlock Text="Select a level" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" FontSize="30" HorizontalAlignment="Center"/>
             <ItemsControl ItemsSource="{Binding Puzzles}" Grid.Row="1" Grid.ColumnSpan="4">
                 <ItemsControl.ItemsPanel>
@@ -38,7 +51,7 @@
                     <DataTemplate>
                         <Viewbox Width="100" Height="100">
                             <Button CommandParameter="{Binding Puzzle}" Command="{Binding Select}">
-                                <Border BorderBrush="DarkBlue" Background="White" BorderThickness="2" Width="50" Height="50">
+                                <Border BorderBrush="Red" Background="White" BorderThickness="2" Width="50" Height="50">
                                     <TextBlock Text="{Binding Puzzle.Grid.Size}"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="6"/>
                                 </Border>
                             </Button>
@@ -48,10 +61,8 @@
 
             </ItemsControl>
 
-            <Button Command="{Binding Back}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Margin="0,10,0,0" Width="50" Height="40" FontFamily="Arial">
-                Back
-            </Button>
-            <Button Command="{Binding Quit}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" Click="Button_Click" Margin="0,10,0,0" Width="50" Height="40" FontFamily="Arial">
+            <Button Command="{Binding Back}" Style="{StaticResource buttonStyle}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Click="Button_Click"> Back </Button>
+            <Button Command="{Binding Quit}" Style="{StaticResource buttonStyle}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" Click="Button_Click">
                 Quit
             </Button>
         </Grid>
