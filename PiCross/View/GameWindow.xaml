@@ -98,7 +98,6 @@
                         </ItemsControl>
                     </DataTemplate>
                 </controls:PiCrossControl.ColumnConstraintsTemplate>
-
             </controls:PiCrossControl>
 
             <Border HorizontalAlignment="Stretch" VerticalAlignment="Center" Padding="20">

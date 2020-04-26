@@ -15,6 +15,7 @@
             <Setter Property="Foreground" Value="Black" />
             <Setter Property="Background" Value="Red"/>
             <Setter Property="Margin" Value="10"/>
+           
         </Style> 
     </UserControl.Resources>
     
@@ -33,10 +34,14 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Command="{Binding Start}" Style="{StaticResource buttonStyle}" Grid.Row="0" Grid.Column="0" >
-                Start Puzzle
+                <Border>
+                    <TextBlock Text="Start Puzzle" />
+                </Border>
             </Button>
-            <Button Command="{Binding SelectPuzzle}" Style="{StaticResource buttonStyle}"  Grid.Row="0" Grid.Column="2" >
-                Select Puzzle
+            <Button Command="{Binding SelectPuzzle}" Style="{StaticResource buttonStyle}"  Grid.Row="0" Grid.Column="2">
+                <Border>
+                    <TextBlock Text="Select Puzzle" />
+                </Border>
             </Button>
 
             <Button Command="{Binding Quit}" Style="{StaticResource buttonStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" >
